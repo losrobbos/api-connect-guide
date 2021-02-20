@@ -381,3 +381,34 @@ const onSubmit = () => {
 }
 
 ```
+
+#### Configure Axios baseURL just once
+
+All axios snippets above set a baseURL to your API (for quick out of the box testing of the snippet). 
+
+However: In a real project you would set this baseURL only ONCE for all your requests. Either in App.js or you create a axios configuration file.
+
+Following we show, how to setup a configuration file in /helpers/axios.js in your React project.
+
+There we create our global axios instance, configure it and export it:
+
+```
+import axios from 'axios'
+
+const axiosInstance = axios.create({
+    baseURL: "http://rob-message-api.herokuapp.com"
+});
+
+export default axiosInstance
+
+```
+
+Now we can use this pre-configured instance througout our app.
+
+We just need to import that configured axios wherever we need it, e.g.:
+`import axios from '../helpers/axios' `
+
+Now all requests you do will have the API base URL already set. 
+
+And you can simply do something like `axios.get('/messages')` to get resources from the API.
+
