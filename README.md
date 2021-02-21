@@ -2,8 +2,8 @@
 
 Throughout this guide we will use our central message API for training:
 
-[http://rob-message-api.herokuapp.com/messages](http://rob-message-api.herokuapp.com/messages)
-
+[http://rob-message-api.herokuapp.com/messages](http://rob-message-api.herokuapp.com/messages){:target="_blank"}
+(on first load this can take up to 15 seconds - because it is running on the Heroku free plan - so just be patient :))
 
 Coding a frontend for testing an API is often too time consuming and tedious.
 
