@@ -1,4 +1,4 @@
-# How to work with an API
+# How to connect & work with an API
 
 Throughout this guide we will use our central message API for training:
 
