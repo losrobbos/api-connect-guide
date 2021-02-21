@@ -42,7 +42,7 @@ Now we are ready to train...
 
 Now setup your first GET request to fetch all existing messages from the API 
 
-- Click the text below the new folder "click to add first request"
+- Click the link "click to add first request" below the new folder you created 
 - Name the request, e.g. "GET all messages"
 - Keep the method "GET" in the dropdown and click button "Create"
 - Put the following url into the top input field (right next to the "GET" dropdown): 
