@@ -23,15 +23,18 @@ The following sections show how test an API
 
 Have not Insomnia so far? 
 - Download: https://insomnia.rest/download/core/
-- Install instructions for different operating systems
-  - For Windows & Linux it will be sufficient to just double click the downloaded file and follow the instructions
+- Install hint: For Windows & Linux it will be sufficient to just double click the downloaded file and follow the instructions. For detailed install instructions and first steps with Insomnia, you can follow the getting started guide below 
+- Getting started Guide: https://support.insomnia.rest/category/9-getting-started
 
 Startup Insomnia
 
-First setup a new folder for the API on the left side
+First setup a new folder for the API you wanna test:
 - Click the little + Icon on the left sidebar
 - Name the folder "Message API"
 
+Done!
+
+Now we are ready to train...
 
 ### Creating requests
 
@@ -42,7 +45,8 @@ Now setup your first GET request to fetch all existing messages from the API
 - Click the text below the new folder "click to add first request"
 - Name the request, e.g. "GET all messages"
 - Keep the method "GET" in the dropdown and click button "Create"
-- Put the following url into the top input field (right next to the "GET" dropdown): http://rob-message-api.herokuapp.com/messages
+- Put the following url into the top input field (right next to the "GET" dropdown): 
+  - `http://rob-message-api.herokuapp.com/messages`
 - Submit the request by clicking the button "Send"
 - In the right sidebar you should receive the result: all messages in a JavaScript array
 
@@ -56,7 +60,8 @@ Now setup a GET request to fetch a SINGLE message from the API by its ID
 - Select "New request"
 - Name the request, e.g. "GET single message"
 - Keep the method "GET" in the dropdown and click button "Create"
-- Put the following url into the top input field (right next to the "GET" dropdown): http://rob-message-api.herokuapp.com/messages/
+- Put the following url into the top input field (right next to the "GET" dropdown): 
+  - `http://rob-message-api.herokuapp.com/messages`
 - Submit the request by clicking the button "Send"
 - In the right sidebar you should receive the result: all messages in a JavaScript array
 
@@ -72,7 +77,8 @@ Now setup a POST request to create & store a new message at the API.
 - Select "JSON" from the dropdown which appears (default "No Body")
 - Click button "Create"
 
-- Put the following url into the top input field (right next to the "POST" dropdown): http://rob-message-api.herokuapp.com/messages/
+- Put the following url into the top input field (right next to the "POST" dropdown): 
+  - `http://rob-message-api.herokuapp.com/messages`
 - Place a new message in the BODY field (below the URL):
   - a new message must be an object that contains the fields "msg" and "user"
   - example: 
@@ -108,7 +114,8 @@ Now setup a PATCH request to create & store a new message at the API.
 - Select "JSON" from the dropdown which appears (default "No Body")
 - Click button "Create"
 
-- Put the following url into the top input field (right next to the "PATCH" dropdown): http://rob-message-api.herokuapp.com/messages/{id}
+- Put the following url into the top input field (right next to the "PATCH" dropdown): 
+  - `http://rob-message-api.herokuapp.com/messages/{id}`
   - Please replace {id} with the id of an existing message!
 
 - Place an "update object" in the BODY field (below the URL):
@@ -144,7 +151,8 @@ Now setup a DELETE request to create & store a new message at the API.
 - Name the request, e.g. "DELETE message"
 - Select the method "DELETE" from the dropdown and click button "Create"
 
-- Put the following url into the top input field (right next to the "DELETE" dropdown): http://rob-message-api.herokuapp.com/messages/{id}
+- Put the following url into the top input field (right next to the "DELETE" dropdown): 
+  - `http://rob-message-api.herokuapp.com/messages/{id}`
   - Please replace {id} with the id of an existing message!
 
 - Submit the request by clicking the button "Send"
@@ -386,7 +394,7 @@ const onSubmit = () => {
 
 All axios snippets above set a baseURL to your API (for quick out of the box testing of the snippet). 
 
-However: In a real project you would set this baseURL only ONCE for all your requests. Either in App.js or you create a axios configuration file.
+However: In a real project you would set this baseURL only ONCE for all your requests. Either in index.js, App.js or you create an axios configuration file.
 
 Following we show, how to setup a configuration file in /helpers/axios.js in your React project.
 
@@ -410,5 +418,5 @@ We just need to import that configured axios wherever we need it, e.g.:
 
 Now all requests you do will have the API base URL already set. 
 
-And you can simply do something like `axios.get('/messages')` to get resources from the API.
+And you can simply just use the path part of the url in your requests like here  `axios.get('/messages')` to communicate with the API.
 
