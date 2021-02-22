@@ -5,14 +5,6 @@ Throughout this guide we will use our central message API for training:
 [http://rob-message-api.herokuapp.com/messages](http://rob-message-api.herokuapp.com/messages)
 (on first load this can take up to 15 seconds - because it is running on the Heroku free plan - so just be patient :))
 
-Coding a frontend for testing an API is often too time consuming and tedious.
-
-An API test tool (often called "Rest Client") will help us to test if our API is working as expected, before we actually connect to it from a frontend.
-
-Typically we will have to test if operations against a RESOURCE are working. 
-
-With a resource we mean a collection of items with the same structure, e.g. a user, a todo, an order, etc.
-
 The following sections show how test an API
 
 1) with a REST Client (Insomnia)
@@ -20,6 +12,10 @@ The following sections show how test an API
 
 
 ## Testing with Insomnia
+
+Coding a frontend for testing an API is often too time consuming and tedious.
+
+An API test tool (often called "Rest Client") will help us to test if our API is working as expected, before we actually connect to it from a frontend.
 
 Have not Insomnia so far? 
 - Download: https://insomnia.rest/download/core/
