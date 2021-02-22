@@ -282,7 +282,14 @@ const onSubmit = () => {
 ### Using Axios
 
 
-Following see samples on how to use your API from a frontend using axios
+Following see samples on how to use your API from a React frontend using axios
+
+Axios is a third party package you need to install first:
+`npm i axios`
+
+Axios is nice, because is optimized to work with JSON APIs. 
+
+Also the error handling with AXIOS is more intuitive compared to fetch.
 
 #### GET request
 
