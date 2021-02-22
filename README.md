@@ -287,7 +287,7 @@ Following see samples on how to use your API from a React frontend using axios
 Axios is a third party package you need to install first:
 `npm i axios`
 
-Axios is nice, because is optimized to work with JSON APIs. 
+Axios is nice for usage with JSON APIs, because it already does the Content-Type setting & stringify under the hood for us.
 
 Also the error handling with AXIOS is more intuitive compared to fetch.
 
