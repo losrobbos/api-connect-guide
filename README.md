@@ -60,7 +60,7 @@ Now setup a GET request to fetch a SINGLE message from the API by its ID
   - `http://rob-message-api.herokuapp.com/messages/${id}`
   - Please replace {id} with the id of an existing message!
 - Submit the request by clicking the button "Send"
-- In the right sidebar you should receive the result: all messages in a JavaScript array
+- In the right sidebar you should receive the result: the single message as a JavaScript object
 
 
 #### POST request
@@ -90,7 +90,7 @@ Now setup a POST request to create & store a new message at the API.
     - something like: `{ user: "Rob" }` will not work!
 
 - Submit the request by clicking the button "Send"
-- In the right sidebar you should receive the result: the new message in a JavaScript array
+- In the right sidebar you should receive the result: the new message in a JavaScript object
 
 Now test if your new messages was appended to ALL messages:
 - click on your "GET All messages" request in the left sidebar
@@ -129,7 +129,7 @@ Now setup a PATCH request to create & store a new message at the API.
     - something like: `{ msg: "I am updated" }` will not work!
 
 - Submit the request by clicking the button "Send"
-- In the right sidebar you should receive the result: the new message in a JavaScript array
+- In the right sidebar you should receive the result: the update message in a JavaScript object
 
 Now test if you see your message update in the list of all messages:
 - click on your "GET All messages" request in the left sidebar
@@ -153,7 +153,7 @@ Now setup a DELETE request to create & store a new message at the API.
   - Please replace {id} with the id of an existing message!
 
 - Submit the request by clicking the button "Send"
-- In the right sidebar you should receive the result: the new message in a JavaScript array
+- In the right sidebar you should receive the result: the deleted message in a JavaScript object
 
 Now test if your new messages was appended to ALL messages:
 - click on your "GET All messages" request in the left sidebar
