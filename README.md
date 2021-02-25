@@ -155,7 +155,7 @@ Now setup a DELETE request to create & store a new message at the API.
 - Submit the request by clicking the button "Send"
 - In the right sidebar you should receive the result: the deleted message in a JavaScript object
 
-Now test if your new messages was appended to ALL messages:
+Now test if your message was deleted from ALL messages:
 - click on your "GET All messages" request in the left sidebar
 - click "Send" to submit the request
 - now in the right sidebar all messages should appear, but your deleted message should be gone...
