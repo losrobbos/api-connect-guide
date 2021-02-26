@@ -5,7 +5,7 @@ Throughout this guide we will use our central message API for training:
 [https://rob-message-api.herokuapp.com/messages](https://rob-message-api.herokuapp.com/messages)
 (on first load this can take up to 15 seconds - because it is running on the Heroku free plan - so just be patient :))
 
-The following sections show how test an API
+The following sections show how to test an API
 
 1) with a REST Client (Insomnia)
 2) from a React frontend (using fetch or axios)
@@ -286,7 +286,11 @@ Axios is a third party package you need to install first:
 
 Axios is nice for usage with JSON APIs, because it already does the Content-Type setting & stringify under the hood for us.
 
-Also the error handling with AXIOS is more intuitive compared to fetch.
+Also the error handling with AXIOS is more intuitive compared to fetch. 
+
+Fetch does not interpret 4XX and 5XX error code responses from an API as errors. Fetch only catches errors when we cannot connect to the API at all (so either if we did not spell the API URL correctly or if the API is not reachable)
+
+Axios interprets 4XX and 5XX error responses from an API as errors and handles them in the catch handler. This makes handling error responses from the backend way more robust.
 
 #### GET request
 
@@ -415,7 +419,7 @@ export default axiosInstance
 
 ```
 
-Now we can use this pre-configured instance througout our app.
+Now we can use this pre-configured instance throughout our app.
 
 We just need to import that configured axios wherever we need it, e.g.:
 `import axios from '../helpers/axios' `
