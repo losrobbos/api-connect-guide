@@ -190,7 +190,7 @@ Send and store a NEW message in the API
 const onSubmit = () => {
 
   let msgNew = {
-    user: 'Donald Trump',
+    user: "Donald Trump",
     msg: "APIs are fake news!"
   }
 
@@ -225,7 +225,7 @@ const onSubmit = () => {
 
   let msgId = "<someRealId>" // put the ID of the message here...  
   let msgUpdate = {
-    user: 'Donald Trump',
+    user: "Donald Trump",
     msg: "I changed my mind, API has good content!"
   }
 
