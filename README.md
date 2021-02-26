@@ -57,7 +57,7 @@ Now setup a GET request to fetch a SINGLE message from the API by its ID
 - Name the request, e.g. "GET single message"
 - Keep the method "GET" in the dropdown and click button "Create"
 - Put the following url into the top input field (right next to the "GET" dropdown): 
-  - `http://rob-message-api.herokuapp.com/messages/${id}`
+  - `http://rob-message-api.herokuapp.com/messages/{id}`
   - Please replace {id} with the id of an existing message!
 - Submit the request by clicking the button "Send"
 - In the right sidebar you should receive the result: the single message as a JavaScript object
@@ -234,7 +234,7 @@ const onSubmit = () => {
   fetch(`http://rob-message-api.herokuapp.com/messages/${msgId}`, {
     method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify( msgNew )
+    body: JSON.stringify( msgUpdate )
   })
   .then(res => res.json())
   .then(messageUpdatedApi => {
