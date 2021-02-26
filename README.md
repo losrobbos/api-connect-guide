@@ -295,7 +295,7 @@ Axios interprets 4XX and 5XX error responses from an API as errors and handles t
 #### GET request
 
 ```
-axios.default.baseURL = "http://rob-message-api.herokuapp.com"
+axios.defaults.baseURL = "http://rob-message-api.herokuapp.com"
 
 axios.get('/messages')
 .then(response => {
@@ -313,7 +313,7 @@ Send and store a NEW message in the API
 
 ```
 
-axios.default.baseURL = "http://rob-message-api.herokuapp.com"
+axios.defaults.baseURL = "http://rob-message-api.herokuapp.com"
 
 const onSubmit = () => {
 
@@ -345,7 +345,7 @@ to see all messages and grab the ID of a message you wanna patch.
 
 ```
 
-axios.default.baseURL = "http://rob-message-api.herokuapp.com"
+axios.defaults.baseURL = "http://rob-message-api.herokuapp.com"
 
 const onSubmit = () => {
 
@@ -380,7 +380,7 @@ to see all messages and grab the ID of a message you wanna remove.
 
 ```
 
-axios.default.baseURL = "http://rob-message-api.herokuapp.com"
+axios.defaults.baseURL = "http://rob-message-api.herokuapp.com"
 
 const onSubmit = () => {
 
