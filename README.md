@@ -92,7 +92,7 @@ Now setup a POST request to create & store a new message at the API.
 - Submit the request by clicking the button "Send"
 - In the right sidebar you should receive the result: the new message in a JavaScript object
 
-Now test if your new messages was appended to ALL messages:
+Now test if your new message was appended to ALL messages:
 - click on your "GET All messages" request in the left sidebar
 - click "Send" to submit the request
 - now in the right sidebar all messages should appear with your new message somewhere at the bottom...
@@ -116,7 +116,7 @@ Now setup a PATCH request to create & store a new message at the API.
   - Please replace {id} with the id of an existing message!
 
 - Place an "update object" in the BODY field (below the URL):
-  - an update object must be an JS object that contains either the fields "msg", "user" or both (so these fields will get updated with new values!)
+  - an update object must be an JS object that contains either the fields "msg", "user" or both (so these fields will get updated in the API with these new values you send!)
   - example: 
   ```
     {
@@ -139,7 +139,7 @@ Now test if you see your message update in the list of all messages:
 
 #### DELETE request
 
-In order to delete an existing item, please use your existing GET request to see ALL messages and grab the ID of a message you wanna patch. 
+In order to delete an existing item, please use your existing GET request to see ALL messages and grab the ID of a message you wanna remove. 
 
 Now setup a DELETE request to create & store a new message at the API.
 
