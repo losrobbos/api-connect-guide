@@ -292,6 +292,8 @@ Fetch does not interpret 4XX and 5XX error code responses from an API as errors.
 
 Axios interprets 4XX and 5XX error responses from an API as errors and handles them in the catch handler. This makes handling error responses from the backend way more robust.
 
+Errors will be available in error.response.data within the catch block (see examples below)
+
 #### GET request
 
 ```
@@ -302,7 +304,10 @@ axios.get('/messages')
   console.log(response.data) // log the returned data
   // do something with the data here, e.g. store it in state
 })
-.catch(error => console.log(error))
+.catch(error => {
+  // in case the API responded, we will have the error inside error.response.data 
+  console.log(error.response && error.response.data)
+})
 
 ```
 
@@ -330,7 +335,10 @@ const onSubmit = () => {
     // do something with the data here, 
     // e.g. add it to your list of messages...
   })
-  .catch(error => console.log(error))
+  .catch(error => {
+    // in case the API responded, we will have the error inside error.response.data 
+    console.log(error.response && error.response.data)
+  })
 
 }
 
@@ -364,7 +372,10 @@ const onSubmit = () => {
     // do something with the data here, 
     // e.g. add it to your list of messages...
   })
-  .catch(error => console.log(error))
+  .catch(error => {
+    // in case the API responded, we will have the error inside error.response.data 
+    console.log(error.response && error.response.data)
+  })
 
 
 }
@@ -392,7 +403,10 @@ const onSubmit = () => {
   .then(response => {
     console.log(response.data) // log the returned data
   })
-  .catch(error => console.log(error))
+  .catch(error => {
+    // in case the API responded, we will have the error inside error.response.data 
+    console.log(error.response && error.response.data)
+  })
 
 }
 
