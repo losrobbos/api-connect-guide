@@ -426,7 +426,8 @@ There we create our global axios instance, configure it and export it:
 import axios from 'axios'
 
 const axiosInstance = axios.create({
-    baseURL: "http://rob-message-api.herokuapp.com"
+    baseURL: "http://rob-message-api.herokuapp.com",
+    withCredentials: true // this option will store received cookies from API & send cookies to API
 });
 
 export default axiosInstance
