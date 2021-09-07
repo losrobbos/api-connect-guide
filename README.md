@@ -167,7 +167,9 @@ Now test if your message was deleted from ALL messages:
 
 ### Using Fetch
 
-Following see samples on how to use your API from a frontend using fetch
+Following see samples on how to use your API from a frontend using fetch.
+
+The examples use classical then handlers for receiving the responses & data. But feeld free to use async & await instead if you're more familiar with that.
 
 #### GET request
 
