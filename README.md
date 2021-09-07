@@ -169,7 +169,7 @@ Now test if your message was deleted from ALL messages:
 
 Following see samples on how to use your API from a frontend using fetch.
 
-The examples use classical then handlers for receiving the responses & data. But feeld free to use async & await instead if you're more familiar with that.
+The examples use classical "then" handlers for receiving the response & data. But feel free to use async & await instead if you're more familiar with that.
 
 #### GET request
 
