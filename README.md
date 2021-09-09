@@ -162,8 +162,13 @@ Now test if your message was deleted from ALL messages:
 
 
 
-## Testing from a frontend
+## Testing from a frontend (React)
 
+Following find examples how to perform REST requests from a React frontend using:
+- Fetch
+- Axios
+
+Also find samples on how to to perform updates in your local state after your API operation. This way we keep API data and local Frontend data in sync. 
 
 ### Using Fetch
 
@@ -173,14 +178,26 @@ The examples use classical "then" handlers for receiving the response & data. Bu
 
 #### GET request
 
+Grab message entries from API
+
 ```
-fetch('http://rob-message-api.herokuapp.com/messages')
-.then(res => res.json())
-.then(messagesAPI => {
-  console.log(messagesAPI) // log the returned data
-  // do something with the data here, e.g. store it in state
-})
+const [messages, setMessages] = useState([])
+
+const getMessages = () => {
+
+  fetch('http://rob-message-api.herokuapp.com/messages')
+  .then(res => res.json())
+  .then(messagesAPI => {
+    console.log(messagesApi) // log the returned data
+  
+    // do something with the data here, e.g. store it in state
+    setMessages( messagesApi)  
+  })
+
+}
 ```
+
+Typically you would fetch all messages on load of your component e.g. in a useEffect Hook.
 
 
 #### POST request
@@ -189,12 +206,15 @@ Send and store a NEW message in the API
 
 ```
 
-const onSubmit = () => {
+const [messages, setMessages] = useState([])
 
+const createMessage = () => {
+
+  // ideally this data comes from a user form
   let msgNew = {
     user: "Donald Trump",
     msg: "APIs are fake news!"
-  }
+  } 
 
   // perform POST request against the API to store message...
   fetch('http://rob-message-api.herokuapp.com/messages', {
@@ -206,26 +226,28 @@ const onSubmit = () => {
   .then(messageCreatedApi => {
     console.log(messageCreatedApi) // log the returned data
 
-    // do something with the data here, 
-    // e.g. add it to your list of messages...
+    // do something with the data here, e.g. add it to your list of messages...
+    setMessages( [ ...messages, messageCreatedApi ] )     
   })
 
 }
 
 ```
 
-#### PATCH request
+#### PATCH / PUT request
 
-Update an existing message in the API
+Update an existing message at the API.
 
-In order to patch (=update) an existing item, please use your GET request
-to see all messages and grab the ID of a message you wanna patch. 
+In order to patch (=update) an existing item, please use a GET request
+to see all messages and grab the ID of a message you wanna patch.
 
 ```
 
-const onSubmit = () => {
+const [messages, setMessages] = useState([])
 
-  let msgId = "<someRealId>" // put the ID of the message here...  
+const updateMessage = ( msgId ) => {
+
+  // ideally this data comes from a user form
   let msgUpdate = {
     user: "Donald Trump",
     msg: "I changed my mind, API has good content!"
@@ -242,8 +264,9 @@ const onSubmit = () => {
   .then(messageUpdatedApi => {
     console.log(messageUpdatedApi) // log the returned data
 
-    // do something with the data here, 
-    // e.g. add it to your list of messages...
+    // update the item in your local state of messages...
+    const messagesUpdated = messages.map( message => message._id === messageUpdatedApi._id ? messageUpdatedApi : message )
+    setMessages( messagesUpdated )
   })
 
 }
@@ -259,9 +282,9 @@ to see all messages and grab the ID of a message you wanna remove.
 
 ```
 
-const onSubmit = () => {
+const [messages, setMessages] = useState([])
 
-  let msgId = "<someRealId>" // put the ID of the message here...  
+const deleteItem = ( msgId ) => {
 
   // perform DELETE request against the API to remove a message...
 
@@ -271,6 +294,10 @@ const onSubmit = () => {
   .then(res => res.json())
   .then(messageDeletedApi => {
     console.log(messageDeletedApi) // log the returned data
+    
+    // delete the message in local state too by filtering it out!
+    const messagesToKeep = messages.filter( message => message._id !== messageDeletedApi._id )
+    setMessages( messagesToKeep )
   })
 
 }
