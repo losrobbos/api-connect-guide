@@ -466,6 +466,7 @@ export default axiosInstance
 Now we can use this pre-configured instance throughout our app.
 
 We just need to import that configured axios wherever we need it, e.g.:
+
 `import axios from '../helpers/axios' `
 
 Now all requests you do will have the API base URL already set. 
