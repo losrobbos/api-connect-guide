@@ -202,7 +202,7 @@ Typically you would fetch all messages on load of your component e.g. in a useEf
 
 #### POST request
 
-Send and store a NEW message in the API
+In order to send and store an NEW item at the API, we must perform a POST request using fetch:
 
 ```
 
