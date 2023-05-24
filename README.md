@@ -222,7 +222,9 @@ const createMessage = () => {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify( msgNew )
   })
+  // once we get a response from API => parse the JSON content out of it using the json() parser function
   .then(res => res.json())
+  // once the data from API is parsed => pass it into next then handler (=> data is inside variable "messageCreatedApi")
   .then(messageCreatedApi => {
     console.log(messageCreatedApi) // log the returned data
 
